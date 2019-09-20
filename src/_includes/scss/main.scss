@@ -1,0 +1,12 @@
+// http://thesassway.com/beginner/how-to-structure-a-sass-project
+@import 'modules/colors';
+
+html { font-size: 16px; }
+
+body {
+    background: $body-color;
+    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    padding: 1rem 2rem;
+}
+
+code { background: darken($body-color, 10%); }
