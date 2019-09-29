@@ -1,4 +1,5 @@
 // http://thesassway.com/beginner/how-to-structure-a-sass-project
+@import 'partials/reset';
 @import 'modules/colors';
 
 html { font-size: 16px; }
