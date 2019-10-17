@@ -1,0 +1,42 @@
+//   With thanks to:
+//
+//   http://viget.com/extend/check-your-breakpoint-using-this-simple-css-snippet
+//   http://codepen.io/tommymarshall/pen/agABu
+//   http://viget.com/extend/sass-maps-are-awesome
+
+$black: #000;
+$red: #ff2a2a;
+
+@mixin breakpoints-display($query) {
+    @media only screen and #{$query} {
+        @content;
+    }
+}
+
+body::after {
+    color: $black;
+    font-family: Helvetica; /* stylelint-disable-line */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    position: fixed;
+    right: 10px;
+    text-align: center;
+    text-transform: uppercase;
+    top: 10px;
+    width: 150px;
+    z-index: 99;
+
+    // Loop through each of the breakpoints
+    // 1. output the name of the breakpoint
+    // 2. lighten the background color an additional 5% for each loop
+
+    @each $point, $query in $breakpoints {
+        @include breakpoints-display($query) {
+            $index: index(map-keys($breakpoints), $point);
+
+            background: lighten($red, 5 * $index);
+            content: '#{$point}';
+        }
+    }
+}

@@ -1,6 +1,7 @@
 // http://thesassway.com/beginner/how-to-structure-a-sass-project
 @import 'partials/reset';
-@import 'modules/colors';
+@import 'modules/all';
+// @import 'partials/breakpoints-display';
 
 body {
     background: $body-color;
@@ -8,4 +9,4 @@ body {
     padding: 1rem 2rem;
 }
 
-code { background: darken($body-color, 10%); }
+code { @include gradient($body-color); }
