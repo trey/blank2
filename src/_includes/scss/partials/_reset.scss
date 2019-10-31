@@ -20,3 +20,6 @@ nav,
 main,
 footer,
 hr { max-width: none; }
+
+// https://absolutely.every-layout.dev/layouts/stack/#line-height-and-modular-scale
+body { line-height: 1.5; }
