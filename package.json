@@ -10,8 +10,8 @@
   "author": "Trey Piepmeier",
   "license": "ISC",
   "devDependencies": {
-    "@11ty/eleventy": "^0.10.0",
-    "sass": "^1.26.3",
+    "@11ty/eleventy": "^0.11.0",
+    "sass": "^1.26.5",
     "stylelint-config-standard": "^20.0.0"
   }
 }
