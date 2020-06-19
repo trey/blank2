@@ -1,12 +1,7 @@
-// http://thesassway.com/beginner/how-to-structure-a-sass-project
-@import 'partials/reset';
+@import 'vendor/all';
 @import 'modules/all';
-// @import 'partials/breakpoints-display';
+@import 'base/all';
+@import 'components/all';
+@import 'pages/all';
 
-body {
-    background: $body-color;
-    font-family: -apple-system, 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    padding: 1rem 2rem;
-}
-
-code { @include gradient($body-color); }
+// Have a nice day.

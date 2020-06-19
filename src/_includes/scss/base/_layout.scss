@@ -1,0 +1,6 @@
+body {
+    background: $body-color;
+    padding: 1rem 2rem;
+}
+
+code { @include gradient($body-color); }
