@@ -1,5 +1,3 @@
-// body {
-//     &.home { @import 'home'; }
-//
-//     &.posts { @import 'posts'; }
-// }
+body {
+    &.gallery { @import 'gallery'; }
+}

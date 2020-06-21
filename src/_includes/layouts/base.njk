@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/main.css" />
 </head>
 
-<body>
+<body{%- if bodyClass %} class="{{ bodyClass }}"{%- endif -%}>
     <div class="wrapper">{{ content | safe }}</div>
 </body>
 </html>

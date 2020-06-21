@@ -1,12 +1,12 @@
 const fs = require('fs');
 const MarkdownIt = require('markdown-it');
 const md = new MarkdownIt();
+const responsiveImage = require('./src/_includes/shortcodes/responsive-image');
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addFilter('markdown', value => md.renderInline(value));
 
-    // Copy unaltered original images.
-    eleventyConfig.addPassthroughCopy('src/img');
+    eleventyConfig.addShortcode('responsiveImage', responsiveImage);
 
     // Make 404 page work with `eleventy --serve`
     eleventyConfig.setBrowserSyncConfig({
