@@ -1,9 +1,12 @@
 const fs = require('fs');
-const MarkdownIt = require('markdown-it');
-const md = new MarkdownIt();
+const markdownIt = require('markdown-it');
+const markdownLib = markdownIt({ html: true, typographer: true });
+const md = new markdownIt();
 const responsiveImage = require('./src/_includes/shortcodes/responsive-image');
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.setLibrary('md', markdownLib);
+
     eleventyConfig.addFilter('markdown', value => md.renderInline(value));
 
     eleventyConfig.addShortcode('responsiveImage', responsiveImage);
