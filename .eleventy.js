@@ -5,6 +5,8 @@ const md = new markdownIt();
 const responsiveImage = require('./src/_includes/shortcodes/responsive-image');
 
 module.exports = function(eleventyConfig) {
+    eleventyConfig.addWatchTarget('src/scss');
+
     eleventyConfig.setLibrary('md', markdownLib);
 
     eleventyConfig.addFilter('markdown', value => md.renderInline(value));
