@@ -6,7 +6,7 @@ module.exports = async (src, alt, title, width, height) => {
     }
     const options = {
         inputDir: 'src/img/gallery',
-        outputDir: 'dist/img/gallery',
+        outputDir: 'public/img/gallery',
         urlPath: '/img/gallery',
         widths: [800, 1600, 2200, null],
         formats: 'jpeg',

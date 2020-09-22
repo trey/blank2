@@ -15,7 +15,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.setBrowserSyncConfig({
         callbacks: {
             ready: function(err, browserSync) {
-                const content_404 = fs.readFileSync('dist/404.html');
+                const content_404 = fs.readFileSync('public/404.html');
 
                 browserSync.addMiddleware('*', (req, res) => {
                     // Provides the 404 content without redirect.
@@ -29,7 +29,7 @@ module.exports = function(eleventyConfig) {
     return {
         dir: {
             input: 'src',
-            output: 'dist',
+            output: 'public',
         },
     };
 };
