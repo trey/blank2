@@ -5,5 +5,5 @@ module.exports = {
         'string-quotes': 'single',
         'at-rule-no-unknown': null,
     },
-    'ignoreFiles': 'src/scss/vendor/**',
+    'ignoreFiles': ['src/**/*.md', 'src/scss/vendor/**'],
 };
