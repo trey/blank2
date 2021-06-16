@@ -3,4 +3,4 @@ updates:
   - package-ecosystem: "npm"
     directory: "/" # directory with package.json/package-lock.json
     schedule:
-      interval: "daily"
+      interval: "weekly"
