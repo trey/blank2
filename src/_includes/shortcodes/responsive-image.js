@@ -9,13 +9,13 @@ module.exports = async (src, alt, title, width, height) => {
         outputDir: 'public/img/gallery',
         urlPath: '/img/gallery',
         widths: [800, 1600, 2200, null],
-        formats: 'jpeg',
+        formats: ['jpeg'],
     };
 
-    let stats = await Image(`${options.inputDir}/${src}`, options);
-    let lowestSrc = stats.jpeg[0];
+    let metadata = await Image(`${options.inputDir}/${src}`, options);
+    let lowestSrc = metadata.jpeg[0];
     let titleAttribute = (title) ? `title="${title}"` : '';
-    let props = stats[options.formats].pop();
+    let props = metadata.jpeg[metadata.jpeg.length - 1];
 
     // If sizes are passed in, use them. Otherwise, analyze the files.
     let definedWidth = (width) ? width : props.width;
@@ -26,7 +26,7 @@ module.exports = async (src, alt, title, width, height) => {
                         src="${lowestSrc.url}"
                         width="${definedWidth}"
                         height="${definedHeight}"
-                        srcset="${stats.jpeg.map(entry => `${entry.url} ${entry.width}w`)}" />`;
+                        srcset="${metadata.jpeg.map(entry => `${entry.url} ${entry.width}w`)}" />`;
 
     // Remove extraneous spaces and newlines.
     return imgTag.replace(/\n/g, '').replace(/\s+/g, ' ');
